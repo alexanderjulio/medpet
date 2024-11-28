@@ -18,3 +18,5 @@ const openAiService = async (message) => {
 }
 
 export default openAiService;
+
+// Configurando git
