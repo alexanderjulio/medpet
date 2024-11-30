@@ -191,44 +191,44 @@ class MessageHandler {
     const contact = {
       addresses: [
         {
-          street: "123 Calle de las Mascotas",
-          city: "Ciudad",
-          state: "Estado",
+          street: "Calle 197 # 27C-21",
+          city: "Floridablanca",
+          state: "Santander",
           zip: "12345",
-          country: "País",
-          country_code: "PA",
+          country: "Colombia",
+          country_code: "CO",
           type: "WORK"
         }
       ],
       emails: [
         {
-          email: "contacto@medpet.com",
+          email: "veterinariaelrecreo@gmail.com",
           type: "WORK"
         }
       ],
       name: {
-        formatted_name: "MedPet Contacto",
-        first_name: "MedPet",
+        formatted_name: "El Recreo Contacto",
+        first_name: "El Recreo",
         last_name: "Contacto",
         middle_name: "",
         suffix: "",
         prefix: ""
       },
       org: {
-        company: "MedPet",
+        company: "Veterinaria El Recreo",
         department: "Atención al Cliente",
         title: "Representante"
       },
       phones: [
         {
-          phone: "+1234567890",
+          phone: "+573125369657",
           wa_id: "1234567890",
           type: "WORK"
         }
       ],
       urls: [
         {
-          url: "https://www.medpet.com",
+          url: "https://elrecreovet.com",
           type: "WORK"
         }
       ]
