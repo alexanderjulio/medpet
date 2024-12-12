@@ -1,6 +1,7 @@
 import whatsappService from './whatsappService.js';
 import appendToSheet from './googleSheetsService.js';
 import openAiService from './openAiService.js';
+import config from "../config/env.js";
 
 class MessageHandler {
 

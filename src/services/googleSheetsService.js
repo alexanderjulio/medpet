@@ -1,5 +1,6 @@
 import path from 'path';
 import { google } from 'googleapis';
+import config from "../config/env.js";
 
 const sheets = google.sheets('v4');
 
@@ -26,12 +27,12 @@ async function addRowToSheet(auth, spreadsheetId, values) {
 const appendToSheet = async (data) => {
     try {
         const auth = new google.auth.GoogleAuth({
-            keyFile: path.join(process.cwd(), 'src/credentials', 'credentials.json'),
+            keyFile: path.join(process.cwd(), 'src/config', 'env.js'),
             scopes: ['https://www.googleapis.com/auth/spreadsheets']
         });
 
         const authClient = await auth.getClient();
-        const spreadsheetId = '1Cs3FxmPksIpoJFErB7DXEJWKNI9nW57ai2bUYBe-LT0'
+        const spreadsheetId = `${config.SHEET_ID}`
 
         await addRowToSheet(authClient, spreadsheetId, data);
         return 'Datos correctamente agregados'

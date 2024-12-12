@@ -9,4 +9,6 @@ export default {
   API_VERSION: process.env.API_VERSION,
   PORT: process.env.PORT || 3001,
   BASE_URL: process.env.BASE_URL,
+  GOOGLE_CREDENTIALS: process.env.GOOGLE_CREDENTIALS,
+  SHEET_ID: process.env.SHEET_ID
 };
