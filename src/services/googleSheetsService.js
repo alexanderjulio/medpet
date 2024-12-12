@@ -3,6 +3,12 @@ import { google } from 'googleapis';
 import config from "../config/env.js";
 
 const sheets = google.sheets('v4');
+const dotenv = require('dotenv');
+
+dotenv.config();
+
+// Parsear credenciales de la variable de entorno
+const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS);
 
 async function addRowToSheet(auth, spreadsheetId, values) {
     const request = {
@@ -27,12 +33,12 @@ async function addRowToSheet(auth, spreadsheetId, values) {
 const appendToSheet = async (data) => {
     try {
         const auth = new google.auth.GoogleAuth({
-            keyFile: path.join(process.cwd(), 'src/config', 'env.js'),
+            credentials,
             scopes: ['https://www.googleapis.com/auth/spreadsheets']
         });
 
         const authClient = await auth.getClient();
-        const spreadsheetId = config.SHEET_ID
+        const spreadsheetId = process.env.SHEET_ID
 
         await addRowToSheet(authClient, spreadsheetId, data);
         return 'Datos correctamente agregados'
