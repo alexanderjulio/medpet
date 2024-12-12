@@ -5,7 +5,7 @@ import config from "../config/env.js";
 const sheets = google.sheets('v4');
 
 // Parsear credenciales de la variable de entorno
-const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS);
+const credentials = process.env.GOOGLE_CREDENTIALS;
 
 async function addRowToSheet(auth, spreadsheetId, values) {
     const request = {
