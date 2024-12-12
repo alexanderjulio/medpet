@@ -3,9 +3,6 @@ import { google } from 'googleapis';
 import config from "../config/env.js";
 
 const sheets = google.sheets('v4');
-const dotenv = require('dotenv');
-
-dotenv.config();
 
 // Parsear credenciales de la variable de entorno
 const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS);
