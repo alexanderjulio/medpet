@@ -3,13 +3,6 @@ import { google } from 'googleapis';
 import config from "../config/env.js";
 
 const sheets = google.sheets('v4');
-//const { GOOGLE_CREDENTIALS, SHEET_ID } = require('../config/env.js');
-
-// Parsear las credenciales (porque están almacenadas como JSON en el archivo .env)
-//const credentials = JSON.parse(GOOGLE_CREDENTIALS);
-
-// Parsear credenciales de la variable de entorno
-// const credentials = process.env.GOOGLE_CREDENTIALS;
 
 async function addRowToSheet(auth, spreadsheetId, range, values) {
     const request = {
@@ -24,7 +17,7 @@ async function addRowToSheet(auth, spreadsheetId, range, values) {
     }
 
     try {
-        const response = await sheets.spreadsheets.values.append(request).data;
+        const response = (await sheets.spreadsheets.values.append(request).data);
         return response;
     } catch (error) {
         console.error(error)
