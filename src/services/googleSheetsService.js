@@ -2,7 +2,7 @@ import path from 'path';
 import { google } from 'googleapis';
 import config from "../config/env.js";
 
-const sheets = google.sheets('v4');
+const sheets = google.sheets({ version: 'v4', auth });
 //const { GOOGLE_CREDENTIALS, SHEET_ID } = require('../config/env.js');
 
 // Parsear las credenciales (porque están almacenadas como JSON en el archivo .env)
@@ -24,8 +24,8 @@ async function addRowToSheet(auth, spreadsheetId, range, values) {
     }
 
     try {
-        const response = await sheets.spreadsheets.values.append(request);
-        return response.data;
+        const response = await sheets.spreadsheets.values.append(request).data;
+        return response;
     } catch (error) {
         console.error(error)
         throw new Error('Error al agregar datos a la hoja de cálculo.');
