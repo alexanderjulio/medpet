@@ -4,10 +4,10 @@ import config from "../config/env.js";
 
 const sheets = google.sheets('v4');
 
-async function addRowToSheet(auth, spreadsheetId, range, values) {
+async function addRowToSheet(auth, spreadsheetId, values) {
     const request = {
         spreadsheetId,
-        range,
+        range: 'reservas',
         valueInputOption: 'RAW',
         insertDataOption: 'INSERT_ROWS',
         resource: {
