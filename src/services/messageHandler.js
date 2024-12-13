@@ -35,7 +35,7 @@ class MessageHandler {
   }
 
   isGreeting(message) {
-    const greetings = ["hola", "hello", "hi", "buenas tardes"];
+    const greetings = ["hola", "hello", "hi", "buenos dias", "buenas tardes", "buenas noches"];
     return greetings.includes(message);
   }
 
@@ -53,10 +53,10 @@ class MessageHandler {
     const menuMessage = "Elige una Opción"
     const buttons = [
       {
-        type: 'reply', reply: { id: 'option_1', title: 'Agendar' }
+        type: 'reply', reply: { id: 'option_1', title: 'Agendar consulta medica' }
       },
       {
-        type: 'reply', reply: { id: 'option_2', title: 'Consultar'}
+        type: 'reply', reply: { id: 'option_2', title: 'Consultar mi médico virtual'}
       },
       {
         type: 'reply', reply: { id: 'option_3', title: 'Ubicación'}
