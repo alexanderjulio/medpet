@@ -2,7 +2,7 @@ import path from 'path';
 import { google } from 'googleapis';
 import config from "../config/env.js";
 
-const sheets = google.sheets({ version: 'v4', auth });
+const sheets = google.sheets('v4');
 //const { GOOGLE_CREDENTIALS, SHEET_ID } = require('../config/env.js');
 
 // Parsear las credenciales (porque están almacenadas como JSON en el archivo .env)
