@@ -17,11 +17,11 @@ async function addRowToSheet(auth, spreadsheetId, values) {
     }
 
     try {
-        const response = await sheets.spreadsheets.values.append(request).data;
+        const response = (await sheets.spreadsheets.values.append(request).data);
         return response;
     } catch (error) {
         console.error(error)
-        throw new Error('Error al agregar datos a la hoja de cálculo.');
+        //throw new Error('Error al agregar datos a la hoja de cálculo.');
     }
 }
 
