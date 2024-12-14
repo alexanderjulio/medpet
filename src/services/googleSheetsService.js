@@ -17,7 +17,7 @@ async function addRowToSheet(auth, spreadsheetId, values) {
     }
 
     try {
-        const response = (await sheets.spreadsheets.values.append(request).data);
+        const response = await sheets.spreadsheets.values.append(request).data;
         return response;
     } catch (error) {
         console.error(error)
@@ -34,7 +34,7 @@ const appendToSheet = async (data) => {
         });
 
         const authClient = await auth.getClient();
-        const spreadsheetId = config.SHEET_ID
+        const spreadsheetId = `${config.SHEET_ID}`
 
         await addRowToSheet(authClient, spreadsheetId, data);
         return 'Datos correctamente agregados'
