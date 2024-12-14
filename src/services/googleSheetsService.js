@@ -27,9 +27,9 @@ async function addRowToSheet(auth, spreadsheetId, values) {
 
 const appendToSheet = async (data) => {
     try {
-        //const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS);
+        const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS);
         const auth = new google.auth.GoogleAuth({
-            keyFile: path.join(process.cwd(), 'src/config', 'env.js'),
+            credentials, //keyFile: path.join(process.cwd(), 'src/config', 'env.js'),
             scopes: ['https://www.googleapis.com/auth/spreadsheets']
         });
 
