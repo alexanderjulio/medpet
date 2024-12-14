@@ -34,7 +34,7 @@ const appendToSheet = async (data) => {
         });
 
         const authClient = await auth.getClient();
-        const spreadsheetId = config.SHEET_ID
+        const spreadsheetId = '1Cs3FxmPksIpoJFErB7DXEJWKNI9nW57ai2bUYBe-LT0'
 
         await addRowToSheet(authClient, spreadsheetId, data);
         return 'Datos correctamente agregados'
