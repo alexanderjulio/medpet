@@ -21,7 +21,7 @@ async function addRowToSheet(auth, spreadsheetId, values) {
         return response;
     } catch (error) {
         console.error(error)
-        //throw new Error('Error al agregar datos a la hoja de cálculo.');
+        throw new Error('Error al agregar datos a la hoja de cálculo.');
     }
 }
 
@@ -34,7 +34,7 @@ const appendToSheet = async (data) => {
         });
 
         const authClient = await auth.getClient();
-        const spreadsheetId = `${config.SHEET_ID}`
+        const spreadsheetId = '`${config.SHEET_ID}`'
 
         await addRowToSheet(authClient, spreadsheetId, data);
         return 'Datos correctamente agregados'
