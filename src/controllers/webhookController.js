@@ -1,5 +1,8 @@
 import config from '../config/env.js';
 import messageHandler from '../services/messageHandler.js';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 class WebhookController {
   async handleIncoming(req, res) {
