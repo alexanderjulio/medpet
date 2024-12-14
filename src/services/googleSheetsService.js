@@ -31,7 +31,7 @@ const appendToSheet = async (data) => {
         //credentials.private_key = credentials.private_key.replace(/\\n/g, '\n'); // Reparar saltos de línea
 
         const auth = new google.auth.GoogleAuth({
-            keyFile: path.join(__dirname, 'src/config', 'env.js'),
+            keyFile: path.join(process.cwd(), 'src/config', 'env.js'),
             scopes: ['https://www.googleapis.com/auth/spreadsheets']
         });
 
