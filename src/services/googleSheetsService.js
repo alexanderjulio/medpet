@@ -4,10 +4,10 @@ import config from "../config/env.js";
 
 const sheets = google.sheets('v4');
 
-async function addRowToSheet(auth, spreadsheetId, values) {
+async function addRowToSheet(auth, spreadsheetId, range, values) {
     const request = {
         spreadsheetId,
-        range: 'reservas',
+        range,
         valueInputOption: 'RAW',
         insertDataOption: 'INSERT_ROWS',
         resource: {
@@ -21,7 +21,7 @@ async function addRowToSheet(auth, spreadsheetId, values) {
         return response;
     } catch (error) {
         console.error(error)
-        throw new Error('Error al agregar datos a la hoja de cálculo.');
+        //throw new Error('Error al agregar datos a la hoja de cálculo.');
     }
 }
 
