@@ -17,7 +17,7 @@ async function addRowToSheet(auth, spreadsheetId, values) {
     }
 
     try {
-        const response = (await sheets.spreadsheets.values.append(request).data);
+        const response = await sheets.spreadsheets.values.append(request).data;
         return response;
     } catch (error) {
         console.error(error)
