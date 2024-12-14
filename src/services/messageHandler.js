@@ -35,7 +35,7 @@ class MessageHandler {
   }
 
   isGreeting(message) {
-    const greetings = ["hola", "hello", "hi", "buenas tardes"];
+    const greetings = ["hola", "hello", "hi", "buenas tardes", "buenos dias", "buenas noches", "ola", "h"];
     return greetings.includes(message);
   }
 
@@ -53,10 +53,10 @@ class MessageHandler {
     const menuMessage = "Elige una Opción"
     const buttons = [
       {
-        type: 'reply', reply: { id: 'option_1', title: 'Agendar' }
+        type: 'reply', reply: { id: 'option_1', title: 'Agendar consulta' }
       },
       {
-        type: 'reply', reply: { id: 'option_2', title: 'Consultar'}
+        type: 'reply', reply: { id: 'option_2', title: 'Médico virtual'}
       },
       {
         type: 'reply', reply: { id: 'option_3', title: 'Ubicación'}
@@ -89,7 +89,7 @@ class MessageHandler {
         response = "Si esto es una emergencia, te invitamos a llamar a nuestra linea de atención"
         await this.sendContact(to);
       default: 
-        response = "Lo siento, no entendí tu selección, Por Favor, elige una de las opciones del menú."
+        response = "Lo siento, no entendí tu selección"
     }
     await whatsappService.sendMessage(to, response);
   }
