@@ -17,7 +17,7 @@ async function addRowToSheet(auth, spreadsheetId, values) {
     }
 
     try {
-        const response = await sheets.spreadsheets.values.append(request).data;
+        const response = (await sheets.spreadsheets.values.append(request).data);
         return response;
     } catch (error) {
         console.error(error)
@@ -27,10 +27,9 @@ async function addRowToSheet(auth, spreadsheetId, values) {
 
 const appendToSheet = async (data) => {
     try {
-        const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS);
-        credentials.private_key = credentials.private_key.replace(/\\n/g, '\n'); // Reparar saltos de línea
-
-        /*const credentials = {
+        //const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS);
+        //credentials.private_key = credentials.private_key.replace(/\\n/g, '\n'); // Reparar saltos de líne
+        const credentials = {
             type: process.env.GOOGLE_TYPE,
             project_id: process.env.GOOGLE_PROJECT_ID,
             private_key_id: process.env.GOOGLE_PRIVATE_KEY_ID,
@@ -41,8 +40,7 @@ const appendToSheet = async (data) => {
             token_uri: process.env.GOOGLE_TOKEN_URI,
             auth_provider_x509_cert_url: process.env.GOOGLE_AUTH_CERT_URL,
             client_x509_cert_url: process.env.GOOGLE_CLIENT_CERT_URL,
-            universe_domain: process.env.UNIVERSE_DOMAIN,
-        }*/
+            universe_domain: process.env.UNIVERSE_DOMAIN,      }
 
         const auth = new google.auth.GoogleAuth({
             credentials,//keyFile: path.join(process.cwd(), 'src/config', 'env.js'),
